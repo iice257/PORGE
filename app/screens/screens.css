@@ -1,0 +1,25 @@
+.group-note {
+  font-size: var(--font-size--lg);
+  color: var(--color-subdued);
+  max-width: 60ch;
+}
+
+.shot-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vw, 6rem);
+}
+
+.shot {
+  border: var(--border-hairline);
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+}
+
+.shot figcaption {
+  margin-top: 1rem;
+}

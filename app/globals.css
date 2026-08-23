@@ -1,0 +1,250 @@
+:root {
+  /* extracted from the live Atelier theme */
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-border: #f2f2f2;
+  --color-inverse-bg: #383838;
+  --color-inverse-fg: #ffffff;
+  --color-black: #000000;
+  --color-muted: rgb(0 0 0 / 0.6);
+  --color-subdued: rgb(0 0 0 / 0.8);
+
+  --font-display: "Newsreader", serif;
+  --font-body: "Red Hat Text", sans-serif;
+
+  --font-size--paragraph: 0.75rem;
+  --font-size--xs: 0.8125rem;
+  --font-size--sm: 0.875rem;
+  --font-size--md: 1rem;
+  --font-size--lg: 1.125rem;
+  --font-size--xl: 1.25rem;
+
+  --line-height--display: 1.05;
+  --line-height--heading: 1.25;
+  --line-height--body: 1.6;
+
+  --radius-pill: 100px;
+  --radius-square: 0px;
+  --border-hairline: 1px solid var(--color-border);
+
+  --page-max: 1440px;
+  --page-pad: clamp(1.25rem, 4vw, 3.75rem);
+  --section-gap: clamp(5rem, 12vw, 10rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--font-size--md);
+  line-height: var(--line-height--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* ---------- typography primitives ---------- */
+
+.display {
+  font-family: var(--font-display), serif;
+  font-weight: 200;
+  line-height: var(--line-height--display);
+  letter-spacing: -0.01em;
+}
+
+.label {
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--font-size--paragraph);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.body-copy {
+  font-size: var(--font-size--lg);
+  line-height: var(--line-height--body);
+  color: var(--color-subdued);
+  max-width: 62ch;
+}
+
+/* ---------- layout primitives ---------- */
+
+.page-shell {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-pad);
+}
+
+.section {
+  margin-block: var(--section-gap);
+}
+
+.section-head {
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section-head .label {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-family: var(--font-display), serif;
+  font-weight: 200;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: var(--line-height--display);
+  max-width: 18ch;
+}
+
+/* ---------- nav (mirrors the store header pattern) ---------- */
+
+.site-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1.5rem var(--page-pad);
+  border-bottom: var(--border-hairline);
+  background: var(--color-background);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: var(--font-size--sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  border-bottom-color: var(--color-foreground);
+}
+
+.nav-logo {
+  justify-self: center;
+}
+
+.nav-logo img {
+  height: 28px;
+  width: auto;
+}
+
+.nav-meta {
+  justify-self: end;
+  font-size: var(--font-size--paragraph);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ---------- pill button (store's primary shape) ---------- */
+
+.pill-link {
+  display: inline-block;
+  font-size: var(--font-size--sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-foreground);
+  color: var(--color-background);
+  transition: opacity 0.2s ease;
+}
+
+.pill-link:hover {
+  opacity: 0.75;
+}
+
+.quiet-link {
+  font-size: var(--font-size--sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-foreground);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.quiet-link:hover {
+  opacity: 0.6;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin-top: var(--section-gap);
+  padding: 3rem var(--page-pad);
+  border-top: var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-line {
+  font-size: var(--font-size--sm);
+}
+
+.footer-line a {
+  border-bottom: 1px solid var(--color-foreground);
+}
+
+.footer-muted {
+  color: var(--color-muted);
+}
+
+/* ---------- responsive nav ---------- */
+
+@media (max-width: 768px) {
+  .site-nav {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "logo meta" "links links";
+    row-gap: 1rem;
+  }
+
+  .nav-logo {
+    grid-area: logo;
+    justify-self: start;
+  }
+
+  .nav-meta {
+    grid-area: meta;
+  }
+
+  .nav-links {
+    grid-area: links;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+}

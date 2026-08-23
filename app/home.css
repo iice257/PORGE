@@ -1,0 +1,147 @@
+/* ---------- hero ---------- */
+
+.hero-split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: min(92vh, 860px);
+  overflow: hidden;
+}
+
+.hero-half {
+  position: relative;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(220px, 32vw, 460px);
+  height: auto;
+  filter: drop-shadow(0 2px 24px rgb(0 0 0 / 0.35));
+}
+
+.hero-intro {
+  padding-block: clamp(3rem, 8vw, 6rem) 0;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  margin-top: 1.25rem;
+  max-width: 22ch;
+}
+
+/* ---------- brief ---------- */
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.brief-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 2rem;
+  border-top: var(--border-hairline);
+}
+
+.brief-facts dt {
+  margin-bottom: 0.5rem;
+}
+
+.brief-facts dd {
+  font-size: var(--font-size--lg);
+}
+
+/* ---------- breakthroughs ---------- */
+
+.breakthrough-figure {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.breakthrough-figure figcaption {
+  margin-top: 1rem;
+}
+
+.hero-split--demo {
+  height: min(60vh, 560px);
+}
+
+/* ---------- gaze ---------- */
+
+.gaze-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.gaze-item figcaption {
+  margin-top: 0.75rem;
+}
+
+/* ---------- onward cards ---------- */
+
+.onward-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.onward-card {
+  border: var(--border-hairline);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.onward-card:hover {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.onward-card:hover .label,
+.onward-card:hover .quiet-link {
+  color: inherit;
+}
+
+.onward-card--dark {
+  background: var(--color-inverse-bg);
+  color: var(--color-inverse-fg);
+  border-color: var(--color-inverse-bg);
+}
+
+.onward-card--dark:hover {
+  background: var(--color-black);
+}
+
+.onward-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.onward-card .quiet-link {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 768px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 80vh;
+  }
+
+  .gaze-grid,
+  .onward-cards {
+    grid-template-columns: 1fr;
+  }
+}
