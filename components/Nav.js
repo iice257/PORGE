@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "/", label: "Overview" },
@@ -11,6 +12,20 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+  }, []);
+
+  function toggleTheme() {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("porge-theme", next);
+    } catch (e) {}
+    setTheme(next);
+  }
 
   return (
     <header className="site-nav">
@@ -23,10 +38,15 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-      <Link href="/" className="nav-logo" aria-label="PORGÉ — home">
-        <img src="/assets/logo-text.png" alt="PORGÉ" />
+      <Link href="/" className="nav-logo" aria-label="PORGÉ, home">
+        <img src="/assets/logo-white.png" alt="PORGÉ" />
       </Link>
-      <span className="nav-meta">Case study</span>
+      <div className="nav-meta">
+        <span className="nav-tag">Case study</span>
+        <button type="button" className="theme-toggle" onClick={toggleTheme}>
+          {theme === "dark" ? "Light" : "Dark"}
+        </button>
+      </div>
     </header>
   );
 }
