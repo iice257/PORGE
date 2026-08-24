@@ -1,5 +1,6 @@
 import "./globals.css";
 import Nav from "../components/Nav";
+import Scrollbar from "../components/Scrollbar/Scrollbar";
 import localFont from "next/font/local";
 
 const newsreader = localFont({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Nav />
         {children}
+        <Scrollbar />
         <footer className="site-footer">
           <p className="footer-line">
             Freelance client work, designed and built by{" "}

@@ -25,6 +25,7 @@
   --page-max: 1440px;
   --page-pad: clamp(1.25rem, 4vw, 3.75rem);
   --section-gap: clamp(3.5rem, 8vw, 6.5rem);
+  --nav-h: 4.25rem;
 }
 
 html[data-theme="light"] {
@@ -349,6 +350,10 @@ html[data-theme="light"] .nav-logo::after {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --nav-h: 7rem;
+  }
+
   .site-nav {
     grid-template-columns: auto 1fr;
     grid-template-areas: "logo meta" "links links";

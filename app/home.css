@@ -4,7 +4,8 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: min(80vh, 760px);
+  height: calc(100vh - var(--nav-h));
+  height: calc(100svh - var(--nav-h));
   overflow: hidden;
 }
 
@@ -119,7 +120,8 @@
   .hero-split {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 72vh;
+    height: calc(100vh - var(--nav-h));
+    height: calc(100svh - var(--nav-h));
   }
 }
 
