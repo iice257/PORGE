@@ -5,13 +5,12 @@
   height: 100%;
   z-index: 20;
   pointer-events: none;
+  /* white strokes + difference blending: the bar always contrasts with
+     whatever is beneath it (dark hero, light page, anything between) */
   --dot-color: #8c8c8c;
   --dot-hover-color: #ffffff;
-  color: var(--dot-color);
-}
-
-html[data-theme="light"] .scrollbar {
-  --dot-hover-color: #000000;
+  color: #ffffff;
+  mix-blend-mode: difference;
 }
 
 .scrollbar line {
