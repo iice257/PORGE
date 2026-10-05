@@ -8,11 +8,9 @@
 
 .swatch-chip {
   height: 140px;
-  border: var(--border-hairline);
-}
-
-.swatch-chip--dark {
-  border-color: transparent;
+  /* Outline in the foreground color so a chip matching the page
+     background (Ink in dark mode, Paper in light) stays visible. */
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 22%, transparent);
 }
 
 .swatch-meta {

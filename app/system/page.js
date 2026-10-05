@@ -38,7 +38,7 @@ export default function System() {
           {palette.map((c) => (
             <div key={c.hex} className="swatch">
               <div
-                className={`swatch-chip ${c.dark ? "swatch-chip--dark" : ""}`}
+                className="swatch-chip"
                 style={{ backgroundColor: c.hex }}
               />
               <div className="swatch-meta">
