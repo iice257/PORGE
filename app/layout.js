@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
           <p className="footer-line">
             Freelance client work, designed and built by{" "}
             <a
-              href="https://kingsleyaremu.vercel.app"
+              href="https://kingsleyaremu.com"
               target="_blank"
               rel="noopener noreferrer"
             >
