@@ -45,4 +45,4 @@ Open http://localhost:3000.
 
 ## Credits
 
-Brand, photography and products © PORGÉ. Case study design and code by [Kingsley Aremu](https://kingsleyaremu.vercel.app).
+Brand, photography and products © PORGÉ. Case study design and code by [Kingsley Aremu](https://kingsleyaremu.com).
